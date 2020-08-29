@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "770362363082",
+    "firebase_url": "https://migrants-b2167.firebaseio.com",
+    "project_id": "migrants-b2167",
+    "storage_bucket": "migrants-b2167.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770362363082:android:ebfc6e5f574bf95c8cb833",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770362363082-s70bi7cg6d7fe8d2tlspv7oosbgv21b4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB--QGMazoeX6UPBIbaU2-mUbNWTPLBzfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770362363082-s70bi7cg6d7fe8d2tlspv7oosbgv21b4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
