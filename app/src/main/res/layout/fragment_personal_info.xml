@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#34189D"
-        tools:context=".personalInfo"
+        tools:context=".Fragments.personalInfo"
       >
         <include layout="@layout/custom_actionbar"/>
         <View
@@ -64,6 +64,7 @@
                                 >
                                 <AutoCompleteTextView
                                     android:id="@+id/empstatus"
+                                    android:hint="Employment Status"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:inputType="none"/>
@@ -78,6 +79,7 @@
                                 >
                                 <AutoCompleteTextView
                                     android:id="@+id/gender"
+                                    android:hint="Gender"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:inputType="none" />
@@ -138,6 +140,7 @@
                                     android:id="@+id/martital_status"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:hint="Marital Status"
                                     android:inputType="none"/>
                             </com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputLayout
@@ -148,11 +151,13 @@
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                                 android:hint="Category"
                                 >
+
                                 <AutoCompleteTextView
                                     android:id="@+id/category"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:inputType="none"/>
+                                    android:inputType="none"
+                                    android:hint="Category" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>
                         <com.google.android.material.textfield.TextInputLayout
@@ -191,16 +196,150 @@
                                 android:layout_weight="1"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                 android:layout_height="wrap_content">
+
                                 <EditText
                                     android:id="@+id/State"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:tooltipText="State"
-                                    android:hint="State"
-                                    />
+                                    android:hint="State" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                <EditText
+                                    android:id="@+id/nationality"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Nationality" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:id="@+id/religion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:tooltipText="Religion"
+                                    android:hint="Religion" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                <EditText
+                                    android:id="@+id/your_dependant"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Your Dependant" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:id="@+id/no_of_dependent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:tooltipText="No. of dependant"
+                                    android:hint="No. of dependant" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                <EditText
+                                    android:id="@+id/education"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Education" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:id="@+id/work_experience"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:tooltipText="No. of dependant"
+                                    android:hint="Work Experience" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/sector"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:tooltipText="Working Sector"
+                                android:hint="Working Sector" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/list_of_skill"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:tooltipText="List of Skill Sets"
+                                android:hint="List of skill sets" />
+                        </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <RelativeLayout
@@ -215,6 +354,7 @@
                         android:layout_margin="40dp"
                         android:background="@drawable/rounded_button"
                         android:text="Next"
+                        android:id="@+id/submit"
                         android:textColor="#ffffff"
                         android:textSize="20sp" />
                 </RelativeLayout>
