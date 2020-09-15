@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Fragments.AfterLoginFragmentSelf"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/matreail_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_margin="30dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/updateData"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/im"
+                        android:src="@drawable/outline_backup_black_48" />
+
+                    <TextView
+                        android:layout_below="@+id/im"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:text="Update your data" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/postJob"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/im2"
+                        android:src="@drawable/outline_book_black_48" />
+
+                    <TextView
+                        android:layout_below="@+id/im2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:text="Post Jobs/Events/Training/Stories/campaign/Voice/Cause" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="30dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/accessMigrant"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/im4"
+                        android:src="@drawable/outline_date_range_black_48" />
+
+                    <TextView
+                        android:layout_below="@+id/im4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:text="Access Migrants Info" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/extentSupport"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/im3"
+                        android:src="@drawable/outline_receipt_long_black_48" />
+
+                    <TextView
+                        android:layout_below="@+id/im3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:text="Extend Your Support To Migrants" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="30dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/payOnline"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/im5"
+                        android:src="@drawable/outline_payments_black_48" />
+
+                    <TextView
+                        android:layout_below="@id/im5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:text="Pay Online" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/talk"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/im6"
+                        android:src="@drawable/outline_phone_in_talk_black_48" />
+
+                    <TextView
+                        android:layout_below="@id/im6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:text="Want to talk us?" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

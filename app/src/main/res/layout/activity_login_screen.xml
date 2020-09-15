@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/matreail_blue"
     tools:context=".Fragments.login_screen">
 
     <LinearLayout
@@ -98,7 +98,6 @@
         <!-- button login -->
         <FrameLayout
             android:layout_width="match_parent"
-            android:elevation="8dp"
             android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
@@ -113,7 +112,14 @@
                 android:layout_gravity="center"
                 android:text="Sign In" />
 
+
         </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
     </LinearLayout>
 

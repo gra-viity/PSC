@@ -56,7 +56,9 @@ public class choose_from extends Fragment {
 
     void loadFragment(Fragment object) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.placeHolder, object).commit();
+        fragmentTransaction.replace(R.id.placeHolder, object).addToBackStack("added").commit();
         //getWindow().setStatusBarColor(Color.rgb(38,16,117));
     }
+
+    //need to implement different types of login
 }
