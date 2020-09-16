@@ -20,8 +20,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-
-public class login_screen extends Fragment {
+public class login_screen_ngo extends Fragment {
     View view;
     TextInputEditText email, pass;
     Button submit;
@@ -29,21 +28,23 @@ public class login_screen extends Fragment {
     ProgressBar progressBar;
     FragmentTransaction fragmentTransaction;
 
-    public login_screen() {
+    public login_screen_ngo() {
         // Required empty public constructor
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mAuth = FirebaseAuth.getInstance();
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.activity_login_screen, container, false);
+        mAuth = FirebaseAuth.getInstance();
+        view = inflater.inflate(R.layout.fragment_login_screen_ngo, container, false);
         initializeUI();
         fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
         submit.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +53,6 @@ public class login_screen extends Fragment {
                 loginUser();
             }
         });
-
         return view;
     }
 
@@ -73,13 +73,13 @@ public class login_screen extends Fragment {
 
             return;
         }
-        mAuth.signInWithEmailAndPassword(emailID + "@self.login", Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(emailID + "@others.login", Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(getActivity(), "Please wait", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
-                    fragmentTransaction.replace(R.id.placeHolder, new AfterLoginFragmentSelf()).commit();
+                    fragmentTransaction.replace(R.id.placeHolder, new AfterLoginFragNgo()).commit();
                 } else {
                     Toast.makeText(getActivity(), "Login failed try again", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
@@ -88,15 +88,10 @@ public class login_screen extends Fragment {
         });
     }
 
-
     private void initializeUI() {
-        email = view.findViewById(R.id.input_username);
-        pass = view.findViewById(R.id.input_password);
-        submit = view.findViewById(R.id.btn_login);
-        progressBar = view.findViewById(R.id.progressBar);
+        email = view.findViewById(R.id.input_username_ngo);
+        pass = view.findViewById(R.id.input_password_ngo);
+        submit = view.findViewById(R.id.btn_login_ngo);
+        progressBar = view.findViewById(R.id.progressBar_ngo);
     }
-
 }
-
-
-//TODO:post ngo info

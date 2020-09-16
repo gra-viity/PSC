@@ -1,5 +1,6 @@
 package com.example.myapplication.Fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
@@ -64,19 +66,19 @@ public class personalInfo extends Fragment {
     }
 
     void arryAdap() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), R.layout.list_items, gen);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(view.getContext(), R.layout.list_items, gen);
         gender.setThreshold(1);
         gender.setAdapter(adapter);
 
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(view.getContext(), R.layout.list_items, maritalStatus);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(view.getContext(), R.layout.list_items, maritalStatus);
         mariStatus.setThreshold(1);
         mariStatus.setAdapter(adapter1);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(view.getContext(), R.layout.list_items, empStatus);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(view.getContext(), R.layout.list_items, empStatus);
         emp.setThreshold(1);
         emp.setAdapter(adapter2);
 
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(view.getContext(), R.layout.list_items, caste);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(view.getContext(), R.layout.list_items, caste);
         category.setThreshold(1);
         category.setAdapter(adapter3);
     }
@@ -120,60 +122,106 @@ public class personalInfo extends Fragment {
         elist_of_skill = list_of_skill.getText().toString();
         eyour_dependant = your_dependant.getText().toString();
         eno_of_dependant = no_of_dependant.getText().toString();
-        if (TextUtils.isEmpty(ename) && TextUtils.isEmpty(emobNo) && TextUtils.isEmpty(estate) && TextUtils.isEmpty(edist) && TextUtils.isEmpty(enation)) {
-            buttonSubmit.setEnabled(false);
+        if (TextUtils.isEmpty(ename) && TextUtils.isEmpty(estate) && TextUtils.isEmpty(edist) && TextUtils.isEmpty(enation) && emobNo.length() < 10 && eAddcardNumber.length() < 16) {
+
             name.setError("Input Name");
-            mobNo.setError("Input Mobile Number");
             state.setError("Input State");
             dist.setError("Input District");
             nation.setError("Input Nation");
-        } else if (emobNo.length() < 10) {
-            buttonSubmit.setEnabled(false);
             mobNo.setError("Invalid mobile number");
-        } else if (eAddcardNumber.length() < 16) {
-            buttonSubmit.setEnabled(false);
             AddcardNumber.setError("Invalid Addhar Card");
-        } else {
-            buttonSubmit.setEnabled(true);
-            buttonSubmit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    Map<String, Object> data = new HashMap<>();
-                    data.put("Name", ename);
-                    data.put("AddharCard", eAddcardNumber);
-                    data.put("Mobile", emobNo);
-                    data.put("eMail", eemail);
-                    data.put("Address", eaddress);
-                    data.put("District", edist);
-                    data.put("State", estate);
-                    data.put("Nation", enation);
-                    data.put("Religion", ereligion);
-                    data.put("Education", eeducation);
-                    data.put("Work_Experience", eworkExp);
-                    data.put("Working_sector", eworkingSector);
-                    data.put("List_of_skills", elist_of_skill);
-                    data.put("Dependents", eyour_dependant);
-                    data.put("Number_of_dependent", eno_of_dependant);
-                    fStore.collection("Migrants").add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(getActivity(), "Done", Toast.LENGTH_LONG).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getActivity(), "Failed", Toast.LENGTH_LONG).show();
-                            Log.d("Error", e.toString());
-                        }
-                    });
-
-                }
-            });
         }
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ename = name.getText().toString();
+                eAddcardNumber = AddcardNumber.getText().toString().trim();
+                emobNo = mobNo.getText().toString().trim();
+                eemail = email.getText().toString();
+                eaddress = address.getText().toString();
+                edist = dist.getText().toString();
+                estate = state.getText().toString();
+                enation = nation.getText().toString();
+                ereligion = religion.getText().toString();
+                eeducation = education.getText().toString();
+                eworkExp = workExp.getText().toString();
+                eworkingSector = workingSector.getText().toString();
+                elist_of_skill = list_of_skill.getText().toString();
+                eyour_dependant = your_dependant.getText().toString();
+                eno_of_dependant = no_of_dependant.getText().toString();
 
+                Map<String, Object> data = new HashMap<>();
+                data.put("Name", ename);
+                data.put("AddharCard", eAddcardNumber);
+                data.put("Mobile", emobNo);
+                data.put("eMail", eemail);
+                data.put("Address", eaddress);
+                data.put("District", edist);
+                data.put("State", estate);
+                data.put("Nation", enation);
+                data.put("Religion", ereligion);
+                data.put("Education", eeducation);
+                data.put("Work_Experience", eworkExp);
+                data.put("Working_sector", eworkingSector);
+                data.put("List_of_skills", elist_of_skill);
+                data.put("Dependents", eyour_dependant);
+                data.put("Number_of_dependent", eno_of_dependant);
+                fStore.collection("Migrants").add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        //  Toast.makeText(getActivity(), "Done", Toast.LENGTH_LONG).show();
+                        AlertDialogShow("Data Added. Want to add more?");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "Failed", Toast.LENGTH_LONG).show();
+                        Log.d("Error", e.toString());
+                    }
+                });
+
+            }
+        });
 
     }
 
 
+    private void AlertDialogShow(String msg) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(msg);
+        builder.setCancelable(true);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                clearFields();
+                dialog.cancel();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private void clearFields() {
+        name.setText("");
+        AddcardNumber.setText("");
+        mobNo.setText("");
+        email.setText("");
+        address.setText("");
+        dist.setText("");
+        state.setText("");
+        nation.setText("");
+        religion.setText("");
+        education.setText("");
+        workExp.setText("");
+        workingSector.setText("");
+        list_of_skill.setText("");
+        your_dependant.setText("");
+        no_of_dependant.setText("");
+    }
 }

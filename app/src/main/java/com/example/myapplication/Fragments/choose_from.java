@@ -39,7 +39,7 @@ public class choose_from extends Fragment {
         ngoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new login_screen());
+                loadFragment(new login_screen_ngo());
             }
         });
 
